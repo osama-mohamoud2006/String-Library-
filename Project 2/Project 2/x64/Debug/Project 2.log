@@ -1,0 +1,8 @@
+﻿  Project 2.cpp
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(34,25): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'Project%202.cpp')
+  
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(81,31): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'Project%202.cpp')
+  
+  Project 2.vcxproj -> E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\x64\Debug\Project 2.exe
