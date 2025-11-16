@@ -165,18 +165,39 @@ public:
  }
 
 //count capital letters , count small lettrs
- static short CapitalLettersCount(string value) {
+ static short CountCapitalLetters(string value) {
      short c = 0;
      for (int i = 0; i < value.length(); i++) 
          if (isupper(value.at(i))) c++;
      return c;
      
  }
- short CapitalLettersCount() {
-     return CapitalLettersCount(this->_value);
+ short CountCapitalLetters() {
+     return CountCapitalLetters(this->_value);
  }
 
- static short SmallLettersd
+ static short CountSmallLetters(string value) {
+     short s = 0;
+     for (int i = 0; i < value.length(); i++)
+         if (islower(value.at(i))) s++;
+     return s;
+ }
+ short CountSmallLetters() {
+     return CountSmallLetters(this->_value);
+ }
+
+ static short GetLengthWithoutCountSpace(string value) {
+     short count = 0;
+     for (int i = 0; i < value.length(); i++) 
+         if (value[i] != ' ')count++;
+     return count;
+     
+ }
+ short GetLengthWithoutCountSpace() {
+     return GetLengthWithoutCountSpace(this->_value);
+ }
+
+
 
 };
 

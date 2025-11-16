@@ -21,6 +21,12 @@ int main() {
    // cout << clsString::InvertStr("osama MOHAMOUD ELsherif") << endl;
   //  cout << String.InvertStr() << endl;
 
-    cout<< clsString::CapitalLettersCount("alAlal")<<endl;
+    cout<< clsString::CountCapitalLetters("Mohammed Abu-Hadhoud")<<endl;
+   
+    cout << clsString::CountSmallLetters("Mohammed Abu-Hadhoud") << endl;
+
+    cout << clsString::GetLengthWithoutCountSpace("Mohammed Abu-Hadhoud") << endl;
+
+    
 
 }
