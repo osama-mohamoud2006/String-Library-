@@ -60,9 +60,41 @@ public:
     }
 
     // uppercase the first letter//
-    string UppercaseFirstLetterOfEachWord(string value) {
-        
+private:
+    static string UppercaseTheFirstLetter(string value) {
+        string res="" ;
+        res += toupper(value.at(0));
+        for (int i=1; i<value.length(); i++) {
+
+            res+=value[i];
+
+        }
+        return res;
     }
+
+public:
+
+    static string UppercaseFirstLetterOfEachWord(string value, string delmi=" ") {
+
+        short pos ;
+
+        string FinalRes="";
+        string word ;
+        while ((pos=value.find(delmi))!=string::npos) {
+            word= value.substr(0,pos); // get the word
+            if (word!="") FinalRes+=UppercaseTheFirstLetter(word)+delmi; // uppercase the current word
+
+            value.erase(0,pos+delmi.length());
+        }
+        if (value!=" ") FinalRes+=UppercaseTheFirstLetter(value);
+        return FinalRes;
+    }
+
+    string UppercaseFirstLetterOfEachWord() {
+        return UppercaseFirstLetterOfEachWord(this->_value);
+    }
+
+
 };
 
 
