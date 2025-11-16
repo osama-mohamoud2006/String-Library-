@@ -38,7 +38,8 @@ public:
         return CountWord(this->_value, " ");
     }
 
-    // The first letter of each word//
+
+// The first letter of each word//
     static void PrintFirstLetter(string value , string delmi=" ") {
         vector<string> word = SplitString(value); // cut the string into words
         for (string &w :word) {
@@ -51,7 +52,7 @@ public:
         PrintFirstLetter(this->_value, " ");
     }
 
-    // uppercase the first letter//
+   
 private:
     static string UppercaseTheFirstLetter(string value) {
         string res="" ;
@@ -88,11 +89,13 @@ private:
         return FinalRes;
     }
 
+  
 
 
 
 public:
 
+//upper case first letter of each word
     static string UppercaseFirstLetterOfEachWord(string value, string delmi=" ") {
 
      string finalRes="";
@@ -105,12 +108,12 @@ public:
         }
           return finalRes;
     }
-
     string UppercaseFirstLetterOfEachWord() {
         return UppercaseFirstLetterOfEachWord(this->_value);
     }
 
-    // lower the first letter  for each word//
+
+// lower the first letter  for each word//
     static string LowercaseFirstLetterOfEachWord(string value, string delmi=" ") {
         string finalRes="";
         vector<string> word = SplitString(value); // cut the string into words
@@ -127,7 +130,28 @@ public:
     }
 
 
+///Upper all chars of all words
 
+ static string UpperAll(string value,string delmi=" ") {
+     string res = "";
+     for (int i = 0; i < value.length(); i++)res += toupper(value.at(i));
+
+     return res;
+ }
+ string UpperAll() {
+     rerturn UpperAll(this->_value);
+ }
+
+ ///Lower all chars of all words
+ static LowerAll(string value, string delmi = " ") {
+     string res = "";
+     for (int i = 0; i < value.length(); i++)res += tolower(value.at(i));
+
+     return res;
+ }
+ string LowerAll() {
+     return LowerAll(this->_value);
+ }
 
 };
 
