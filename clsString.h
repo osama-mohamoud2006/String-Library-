@@ -55,6 +55,14 @@ public:
         // the last word
         if (value!="") cout<<value.at(0)<<endl;
     }
+    void PrintFirstLetter() {
+        PrintFirstLetter(this->_value, " ");
+    }
+
+    // uppercase the first letter//
+    string UppercaseFirstLetterOfEachWord(string value) {
+        
+    }
 };
 
 

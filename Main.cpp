@@ -7,7 +7,10 @@ int main(){
     clsString String;
     String.SetValue("osama mohamoud");
     cout<< String.CountWord()<<endl;
+    String.PrintFirstLetter();
+    clsString::PrintFirstLetter("kaka lala tka clk");
 
-    String.PrintFirstLetter(String.GetValue());
+
+
 
 }
