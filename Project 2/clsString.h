@@ -85,11 +85,11 @@ private:
 
             value.erase(0,pos+delmi.length());
         }
-        if (value!=" ") FinalRes.push_back(value);
+        if (value!=" "|| !value.empty()) FinalRes.push_back(value);
         return FinalRes;
     }
 
-   char InvertChar(char c) {
+   static char InvertChar(char c) {
        return (isupper(c)) ? tolower(c) : toupper(c);
    }
 
@@ -152,9 +152,31 @@ public:
      return LowerAll(this->_value);
  }
 
-// invert char
+// invert string
+ static string InvertStr(string value) {
+     string res = "";
+     for (int i = 0; i < value.size(); i++) {
+         res += InvertChar(value.at(i));
+     }
+     return res;
+ }
+ string InvertStr() {
+     return InvertStr(this->_value);
+ }
 
+//count capital letters , count small lettrs
+ static short CapitalLettersCount(string value) {
+     short c = 0;
+     for (int i = 0; i < value.length(); i++) 
+         if (isupper(value.at(i))) c++;
+     return c;
+     
+ }
+ short CapitalLettersCount() {
+     return CapitalLettersCount(this->_value);
+ }
 
+ static short SmallLettersd
 
 };
 
