@@ -16,8 +16,9 @@ int main() {
     // cout<<clsString::LowercaseFirstLetterOfEachWord("Life Is About:")<<endl;
     // cout<<String.LowercaseFirstLetterOfEachWord()<<endl;
 
-   cout<< clsString::UpperAll("osama is haha")<<endl;
+//   cout<< clsString::UpperAll("osama is haha")<<endl;
 
+    cout << clsString::InvertChar('A') << endl;
 
 
 }

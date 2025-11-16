@@ -89,9 +89,9 @@ private:
         return FinalRes;
     }
 
-  
-
-
+   char InvertChar(char c) {
+       return (isupper(c)) ? tolower(c) : toupper(c);
+   }
 
 public:
 
@@ -131,7 +131,6 @@ public:
 
 
 ///Upper all chars of all words
-
  static string UpperAll(string value,string delmi=" ") {
      string res = "";
      for (int i = 0; i < value.length(); i++)res += toupper(value.at(i));
@@ -139,11 +138,11 @@ public:
      return res;
  }
  string UpperAll() {
-     rerturn UpperAll(this->_value);
+     return UpperAll(this->_value);
  }
 
- ///Lower all chars of all words
- static LowerAll(string value, string delmi = " ") {
+///Lower all chars of all words
+ static string LowerAll(string value, string delmi = " ") {
      string res = "";
      for (int i = 0; i < value.length(); i++)res += tolower(value.at(i));
 
@@ -152,6 +151,10 @@ public:
  string LowerAll() {
      return LowerAll(this->_value);
  }
+
+// invert char
+
+
 
 };
 
