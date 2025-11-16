@@ -5,7 +5,7 @@ using namespace std;
 int main() {
 
     clsString String;
-    String.SetValue("osama mohamoud");
+    String.SetValue("osAmA mohamoud");
     //cout << String.CountWord() << endl;
     // String.PrintFirstLetter();
     // clsString::PrintFirstLetter("kaka lala tka clk");
@@ -21,12 +21,13 @@ int main() {
    // cout << clsString::InvertStr("osama MOHAMOUD ELsherif") << endl;
   //  cout << String.InvertStr() << endl;
 
-    cout<< clsString::CountCapitalLetters("Mohammed Abu-Hadhoud")<<endl;
+    //cout<< clsString::CountCapitalLetters("Mohammed Abu-Hadhoud")<<endl;
+    cout << String.CountCapitalLetters() << endl;
    
-    cout << clsString::CountSmallLetters("Mohammed Abu-Hadhoud") << endl;
-
-    cout << clsString::GetLengthWithoutCountSpace("Mohammed Abu-Hadhoud") << endl;
-
+    //cout << clsString::CountSmallLetters("Mohammed Abu-Hadhoud") << endl;
+    cout << String.CountSmallLetters() << endl;
+   // cout << clsString::GetLengthWithoutCountSpace("Mohammed Abu-Hadhoud") << endl;
+    cout << String.GetLengthWithoutCountSpace() << endl;
     
 
 }
