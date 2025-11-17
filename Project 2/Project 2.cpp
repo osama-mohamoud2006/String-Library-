@@ -11,8 +11,8 @@ int main() {
     cout << "============================================================\n";
 
     // 1. Count Words
-    cout << "The count of words in static is: " << clsString::CountWord("hello world") << endl;
-    cout << "The count of words in obj is: " << String.CountWord() << endl;
+    cout << "The count of words in static is: \" " <<String.GetValue()<<"\" " << clsString::CountWord("hello world") << endl;
+    cout << "The count of words in obj is:  \" " << String.GetValue() << "\" " << String.CountWord() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 2. Print First Letters
