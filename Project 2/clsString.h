@@ -26,13 +26,13 @@ public:
     void SetValue(string value) {
         this->_value = value;
     }
-    void SetDelmi(string delmi) {
-        this->_delmi = delmi;
+   static void SetDelmi(string delmi) {
+        _delmi = delmi;
     }
 
     //property get
     string GetValue(){return this->_value;}
-    string GetTheCurrentDelmi() { return this->_delmi; }
+   static string GetTheCurrentDelmi() { return _delmi; }
 
 // count word//
     static short CountWord(string value) {
@@ -254,11 +254,11 @@ public:
 // Trim
  static string TrimLeft(string value) {
      for (int i = 0; i < value.length(); i++)
-         if (value[i] != ' ') return value.substr(i, value.length() - 1);
+         if (value[i] != ' ') return value.substr(i, value.length() -1);
  }
 
  static string TrimRight(string value) {
-     for (int i = value.length()-1; i >= 0; i--)
+     for (int i = value.length(); i >= 0; i--)
          if (value[i] != ' ') return value.substr(0, i);
 
  }
