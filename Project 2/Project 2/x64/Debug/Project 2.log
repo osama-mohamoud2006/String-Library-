@@ -8,10 +8,10 @@ E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(92,33): w
 E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(261,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(310,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(308,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(325,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(323,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
 E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(264,1): warning C4715: 'clsString::TrimRight': not all control paths return a value

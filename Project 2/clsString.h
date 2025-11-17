@@ -258,7 +258,7 @@ public:
  }
 
  static string TrimRight(string value) {
-     for (int i = value.length(); i >= 0; i--)
+     for (int i = value.length()-1; i >= 0; i--)
          if (value[i] != ' ') return value.substr(0, i);
 
  }
@@ -286,11 +286,9 @@ public:
 
  }
 
- string TrimLeft() { TrimLeft(this->_value);}
+ string TrimLeft() { return TrimLeft(this->_value);}
  string TrimRight() { return TrimRight(this->_value); }
- string TrimString(string option = "all") {
-     return TrimString(this->_value, option);
- }
+ string TrimString(string option = "all") {return TrimString(this->_value, option);}
 
 
  //join string 
@@ -362,6 +360,26 @@ public:
 
  string ReplaceWord(string WordToreplace, string TheNewWord ,bool Match =true) {
      return ReplaceWord(this->_value, WordToreplace, TheNewWord, Match);
+ }
+
+ private:
+    static bool IsPunct(char p) {
+         return(p == '(' || p == ')' || p == '\'' ||
+             p == '.' || p == '-' || p == ':' || p == '?'
+             || p == ',' || p == ';' || p == '!' || p == '"') ? true : false;
+     }
+
+public:
+ //remove punctuation
+ static string RemovePunctuation(string value) {
+     string res = "";
+     for (int i = 0; i < value.length(); i++) 
+         if (!IsPunct(value[i])) res += value[i];
+     return res;
+     
+ }
+ string RemovePunctuation() {
+     return RemovePunctuation(this->_value);
  }
 
 };
