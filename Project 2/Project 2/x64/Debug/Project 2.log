@@ -14,4 +14,6 @@ E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(310,17): 
 E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(325,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(264,1): warning C4715: 'clsString::TrimRight': not all control paths return a value
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(258,1): warning C4715: 'clsString::TrimLeft': not all control paths return a value
   Project 2.vcxproj -> E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\x64\Debug\Project 2.exe

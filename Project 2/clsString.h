@@ -332,7 +332,7 @@ public:
      }
 
  public:
- static string ReplaceWord(string FullLine,string WordToreplace , string TheNewWord,bool Match=true) {
+ static string ReplaceWord( string FullLine,string WordToreplace , string TheNewWord,bool Match=true) {
     
      // if the word in line and the word to replace are exactly the same 
      if (Match) {
