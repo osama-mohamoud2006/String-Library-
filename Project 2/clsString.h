@@ -9,10 +9,12 @@ class clsString {
 
 private:
     string _value ;
+    string _delmi;
 public:
     //no-args constructor 
     clsString() {
         this->_value = "";
+        this->_delmi = " ";
     }
 
     //parametrized constructor 
@@ -24,23 +26,27 @@ public:
     void SetValue(string value) {
         this->_value = value;
     }
+    void SetDelmi(string delmi) {
+        this->_delmi = delmi;
+    }
 
     //property get
     string GetValue(){return this->_value;}
+    string GetTheCurrentDelmi() { return this->_delmi; }
 
 // count word//
-    static short CountWord(string value, string delmi=" ") {
+    static short CountWord(string value, _delmi) {
         vector<string> word = SplitString(value); // cut the string into words
         return word.size();
     }
 
     short CountWord() {
-        return CountWord(this->_value, " ");
+        return CountWord(this->_value, _delmi);
     }
 
 
 // The first letter of each word//
-    static void PrintFirstLetter(string value , string delmi=" ") {
+    static void PrintFirstLetter(string value , _delmi) {
         vector<string> word = SplitString(value); // cut the string into words
         for (string &w :word) {
             //temp var
@@ -49,11 +55,10 @@ public:
         }
     }
     void PrintFirstLetter() {
-        PrintFirstLetter(this->_value, " ");
+        PrintFirstLetter(this->_value, _delmi);
     }
 
-   
-private:
+
     static string UppercaseTheFirstLetter(string value) {
         string res="" ;
         res += toupper(value.at(0));
@@ -74,29 +79,32 @@ private:
         }
         return res;
     }
-    // cut the full sentence into vector of words
-   static vector<string>SplitString(string value, string delmi=" ") {
-        short pos ;
-        vector<string>FinalRes;
-        string word ;
-        while ((pos=value.find(delmi))!=string::npos) {
-            word= value.substr(0,pos); // get the word
-            if (word!="") FinalRes.push_back(word);// uppercase the current word
-
-            value.erase(0,pos+delmi.length());
-        }
-        if (value!=" "|| !value.empty()) FinalRes.push_back(value);
-        return FinalRes;
-    }
-
    static char InvertChar(char c) {
        return (isupper(c)) ? tolower(c) : toupper(c);
    }
 
 public:
+    // cut the full sentence into vector of words
+  static vector<string>SplitString(string value, _delmi) {
+        short pos;
+        vector<string>FinalRes;
+        string word;
+        while ((pos = value.find(_delmi)) != string::npos) {
+            word = value.substr(0, pos); // get the word
+            if (word != "") FinalRes.push_back(word);// uppercase the current word
+
+            value.erase(0, pos + _delmi.length());
+        }
+        if (value != " " || !value.empty()) FinalRes.push_back(value);
+        return FinalRes;
+    }
+
+  vector<string>SplitStringOfThisObject() {
+      return SplitString(this->_value , _delmi);
+  }
 
 //upper case first letter of each word
-    static string UppercaseFirstLetterOfEachWord(string value, string delmi=" ") {
+    static string UppercaseFirstLetterOfEachWord(string value, _delmi) {
 
      string finalRes="";
         vector<string> word = SplitString(value); // cut the string into words
@@ -104,12 +112,12 @@ public:
               //temp var
             string TempWord = w;
             TempWord=UppercaseTheFirstLetter(TempWord);
-            finalRes+=TempWord+delmi;
+            finalRes+=TempWord+ _delmi;
         }
-          return finalRes;
+          return finalRes.erase(finalRes.length() - _delmi.length());
     }
     string UppercaseFirstLetterOfEachWord() {
-        return UppercaseFirstLetterOfEachWord(this->_value);
+        return UppercaseFirstLetterOfEachWord(this->_value , _delmi);
     }
 
 
@@ -123,10 +131,10 @@ public:
             TempWord=LowercaseTheFirstLetter(TempWord);
             finalRes+=TempWord+delmi;
         }
-        return finalRes;
+        return finalRes.erase(finalRes.length()-delmi.length()) ;
     }
- string LowercaseFirstLetterOfEachWord() {
-        return LowercaseFirstLetterOfEachWord(this->_value);
+ string LowercaseFirstLetterOfEachWord(string delmi = " ") {
+        return LowercaseFirstLetterOfEachWord(this->_value , delmi);
     }
 
 
@@ -137,8 +145,8 @@ public:
 
      return res;
  }
- string UpperAll() {
-     return UpperAll(this->_value);
+ string UpperAll(string delmi = " ") {
+     return UpperAll(this->_value,delmi);
  }
 
 ///Lower all chars of all words
@@ -148,8 +156,8 @@ public:
 
      return res;
  }
- string LowerAll() {
-     return LowerAll(this->_value);
+ string LowerAll(string delmi = " ") {
+     return LowerAll(this->_value,delmi);
  }
 
 // invert string
@@ -197,7 +205,164 @@ public:
      return GetLengthWithoutCountSpace(this->_value);
  }
 
+//count Specific char in string 
+ static short CountCharInString(char c , string value , bool Match=false) {
+     short count = 0; 
+     for (int i = 0; i < value.length(); i++) 
+     {
+         if (!Match) {
+             if (toupper(value[i]) == toupper(c)) count++; // isn't case senstive
+         }
+         else {
+             if (value[i] == c) count++; // case senstive
+         }
+     }
 
+     return count;
+ }
+ short CountCharInString(char c, bool Match = false) {
+     return  CountCharInString(c, this->_value, Match);
+ }
+
+// vowel char
+ static bool IsVowel(char c) {
+     char vowel[] = {'a','e','i','o','u'};
+     return (c == vowel[0] || c == vowel[1] || c == vowel[2] || c == vowel[3] || c == vowel[4]) ? true : false;
+ }
+ 
+//Count Vowel chars in string 
+ static short CountTheVowelCharsInString(string value )
+ {
+     short count = 0;
+     for (int i = 0; i < value.length(); i++)
+         if ( IsVowel( tolower( value.at(i) ) ) ) count++;
+     return count;
+ }
+ short CountTheVowelCharsInString() {
+     return CountTheVowelCharsInString(this->_value);
+ }
+
+// Print Vowel chars in string 
+ static void PrintVowelsInString(string value) {
+     for (int i = 0; i < value.length(); i++)
+         if (IsVowel(tolower(value.at(i)))) cout<< value.at(i)<<" ";
+ }
+ void PrintVowelsInString(){
+     PrintVowelsInString(this->_value);
+ }
+
+// Trim
+ static string TrimLeft(string value) {
+     for (int i = 0; i < value.length(); i++)
+         if (value[i] != ' ') return value.substr(i, value.length() - 1);
+ }
+
+ static string TrimRight(string value) {
+     for (int i = value.length(); i >= 0; i--)
+         if (value[i] != ' ') return value.substr(0, i);
+
+ }
+
+ static string TrimString(string value, string option = "all") {
+     string FinalRes = "";
+     if (option == "all")
+     {
+         return TrimRight(TrimLeft(value));
+         
+     }
+
+     else if (option == "right")
+     {
+      //right
+        return TrimRight(value);
+     }
+
+     else if (option == "left") {
+         //left
+         return TrimLeft(value);
+     }
+
+     else return value;
+
+ }
+
+ string TrimLeft() { TrimLeft(this->_value);}
+ string TrimRight() { return TrimRight(this->_value); }
+ string TrimString(string option = "all") {
+     return TrimString(this->_value, option);
+ }
+
+
+ //join string 
+ static string JoinString(vector<string>VectorOfString,string delmi=" ") {
+     string FinalString = "";
+     for (string& str : VectorOfString) 
+         FinalString+=(str+delmi);
+     return FinalString;
+     
+ }
+
+ // reverse string 
+ static string ReverseString(string value , string delmi =" ") {
+
+     vector<string> words = SplitString(value);
+     string res = "";
+     for (int i = words.size() - 1; i >= 0; i--) {
+         res += words[i]+delmi;
+     }
+     return res.erase(res.length()-delmi.length());
+ }
+ string ReverseString(string delmi = " ") {
+     return ReverseString(this->_value, delmi);
+ }
+
+
+ //replace word
+
+ private:
+    static string ReplaceWordMatchCase(string FullLine, string WordToreplace, string TheNewWord) {
+         short pos = 0;
+         while ((pos = FullLine.find(WordToreplace)) != string::npos) {
+
+             FullLine.erase(pos, WordToreplace.length()); // delete the selected word
+             FullLine.insert(pos, TheNewWord);
+
+         }
+         return FullLine;
+     }
+
+ public:
+ static string ReplaceWord(string FullLine,string WordToreplace , string TheNewWord,bool Match=true) {
+    
+     // if the word in line and the word to replace are exactly the same 
+     if (Match) {
+         return  ReplaceWordMatchCase(FullLine, WordToreplace,TheNewWord);
+     }
+  
+
+     //if the word in line and the word to replace aren't exactly the same 
+     if (!Match) {
+         //Manual implementaion
+
+           //1.Split String
+         vector<string> words = SplitString(FullLine);
+
+         //2.Access Elements
+         //3.Replace Element
+         for (string& SWord : words) {
+             if (LowerAll(SWord,"") == LowerAll(WordToreplace, "")) 
+                 SWord = TheNewWord;
+         }
+
+         return JoinString(words);
+     }
+
+     else return FullLine;
+ }
+
+ string ReplaceWord(string WordToreplace, string TheNewWord ,bool Match =true) {
+     return ReplaceWord(this->_value, WordToreplace, TheNewWord, Match);
+ }
 
 };
 
