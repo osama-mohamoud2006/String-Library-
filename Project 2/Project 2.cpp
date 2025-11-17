@@ -6,15 +6,22 @@ int main() {
 
     clsString String;
     String.SetValue("osama mohamoud");
-    //cout << String.CountWord() << endl;
-    // String.PrintFirstLetter();
-    // clsString::PrintFirstLetter("kaka lala tka clk");
 
-    // cout<<String.UppercaseFirstLetterOfEachWord()<<endl;
-     //cout<<clsString::UppercaseFirstLetterOfEachWord("song is good!")<<endl;
-    //
-   // cout<<clsString::LowercaseFirstLetterOfEachWord("Life Is About:")<<endl;
-    // cout<<String.LowercaseFirstLetterOfEachWord()<<endl;
+    cout << "the count of words in static is: " << clsString::CountWord("osaa mam") << endl;
+    cout << "the count of words in obj is: " << String.CountWord() << endl;
+
+	cout << "the first letters in static is: " << endl;
+    clsString::PrintFirstLetter("kaka lala tka clk");
+	cout << "the first letters in obj is: " << endl;
+    String.PrintFirstLetter();
+
+   
+      cout<<clsString::UppercaseFirstLetterOfEachWord("song is good!")<<endl;
+     cout<<String.UppercaseFirstLetterOfEachWord()<<endl;
+     
+    
+    cout<<clsString::LowercaseFirstLetterOfEachWord("Life Is About:")<<endl;
+     cout<<String.LowercaseFirstLetterOfEachWord()<<endl;
 
 //   cout<< clsString::UpperAll("osama is haha")<<endl;
 
