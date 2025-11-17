@@ -1,17 +1,17 @@
 ﻿  Project 2.cpp
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(35,25): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(40,25): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(87,33): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(92,33): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(256,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(261,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(305,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(310,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(320,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(325,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
   Project 2.vcxproj -> E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\x64\Debug\Project 2.exe

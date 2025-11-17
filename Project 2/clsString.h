@@ -9,7 +9,7 @@ class clsString {
 
 private:
     string _value ;
-    string _delmi;
+   static string _delmi;
 public:
     //no-args constructor 
     clsString() {
@@ -35,18 +35,18 @@ public:
     string GetTheCurrentDelmi() { return this->_delmi; }
 
 // count word//
-    static short CountWord(string value, _delmi) {
+    static short CountWord(string value) {
         vector<string> word = SplitString(value); // cut the string into words
         return word.size();
     }
 
     short CountWord() {
-        return CountWord(this->_value, _delmi);
+        return CountWord(this->_value);
     }
 
 
 // The first letter of each word//
-    static void PrintFirstLetter(string value , _delmi) {
+    static void PrintFirstLetter(string value ) {
         vector<string> word = SplitString(value); // cut the string into words
         for (string &w :word) {
             //temp var
@@ -55,7 +55,7 @@ public:
         }
     }
     void PrintFirstLetter() {
-        PrintFirstLetter(this->_value, _delmi);
+        PrintFirstLetter(this->_value);
     }
 
 
@@ -85,7 +85,7 @@ public:
 
 public:
     // cut the full sentence into vector of words
-  static vector<string>SplitString(string value, _delmi) {
+  static vector<string>SplitString(string value) {
         short pos;
         vector<string>FinalRes;
         string word;
@@ -100,11 +100,11 @@ public:
     }
 
   vector<string>SplitStringOfThisObject() {
-      return SplitString(this->_value , _delmi);
+      return SplitString(this->_value);
   }
 
 //upper case first letter of each word
-    static string UppercaseFirstLetterOfEachWord(string value, _delmi) {
+    static string UppercaseFirstLetterOfEachWord(string value) {
 
      string finalRes="";
         vector<string> word = SplitString(value); // cut the string into words
@@ -117,47 +117,47 @@ public:
           return finalRes.erase(finalRes.length() - _delmi.length());
     }
     string UppercaseFirstLetterOfEachWord() {
-        return UppercaseFirstLetterOfEachWord(this->_value , _delmi);
+        return UppercaseFirstLetterOfEachWord(this->_value );
     }
 
 
 // lower the first letter  for each word//
-    static string LowercaseFirstLetterOfEachWord(string value, string delmi=" ") {
+    static string LowercaseFirstLetterOfEachWord(string value) {
         string finalRes="";
         vector<string> word = SplitString(value); // cut the string into words
         for (string &w :word) {
             //temp var
             string TempWord = w;
             TempWord=LowercaseTheFirstLetter(TempWord);
-            finalRes+=TempWord+delmi;
+            finalRes+=TempWord+ _delmi;
         }
-        return finalRes.erase(finalRes.length()-delmi.length()) ;
+        return finalRes.erase(finalRes.length()- _delmi.length()) ;
     }
- string LowercaseFirstLetterOfEachWord(string delmi = " ") {
-        return LowercaseFirstLetterOfEachWord(this->_value , delmi);
+ string LowercaseFirstLetterOfEachWord() {
+        return LowercaseFirstLetterOfEachWord(this->_value);
     }
 
 
 ///Upper all chars of all words
- static string UpperAll(string value,string delmi=" ") {
+ static string UpperAll(string value) {
      string res = "";
      for (int i = 0; i < value.length(); i++)res += toupper(value.at(i));
 
      return res;
  }
- string UpperAll(string delmi = " ") {
-     return UpperAll(this->_value,delmi);
+ string UpperAll() {
+     return UpperAll(this->_value);
  }
 
 ///Lower all chars of all words
- static string LowerAll(string value, string delmi = " ") {
+ static string LowerAll(string value) {
      string res = "";
      for (int i = 0; i < value.length(); i++)res += tolower(value.at(i));
 
      return res;
  }
- string LowerAll(string delmi = " ") {
-     return LowerAll(this->_value,delmi);
+ string LowerAll() {
+     return LowerAll(this->_value);
  }
 
 // invert string
@@ -294,26 +294,26 @@ public:
 
 
  //join string 
- static string JoinString(vector<string>VectorOfString,string delmi=" ") {
+ static string JoinString(vector<string>VectorOfString) {
      string FinalString = "";
      for (string& str : VectorOfString) 
-         FinalString+=(str+delmi);
+         FinalString+=(str+ _delmi);
      return FinalString;
      
  }
 
  // reverse string 
- static string ReverseString(string value , string delmi =" ") {
+ static string ReverseString(string value ) {
 
      vector<string> words = SplitString(value);
      string res = "";
      for (int i = words.size() - 1; i >= 0; i--) {
-         res += words[i]+delmi;
+         res += words[i]+ _delmi;
      }
-     return res.erase(res.length()-delmi.length());
+     return res.erase(res.length()- _delmi.length());
  }
- string ReverseString(string delmi = " ") {
-     return ReverseString(this->_value, delmi);
+ string ReverseString() {
+     return ReverseString(this->_value);
  }
 
 
@@ -350,7 +350,7 @@ public:
          //2.Access Elements
          //3.Replace Element
          for (string& SWord : words) {
-             if (LowerAll(SWord,"") == LowerAll(WordToreplace, "")) 
+             if (LowerAll(SWord) == LowerAll(WordToreplace)) 
                  SWord = TheNewWord;
          }
 
@@ -367,3 +367,4 @@ public:
 };
 
 
+string clsString::_delmi = " ";
