@@ -225,6 +225,16 @@ int main() {
    str.ReplaceWord("osama", "sama", true);
       cout << str.GetValue()<< endl;
       
- 
+      cout << "============================================================\n";
+      clsString::SetDelmi("//#//");
+    
+      vector<string> strVec = clsString::SplitString("oakl//#//kask//#//ksak");
+
+      for (int i = 0; i < strVec.size(); i++) {
+          cout << strVec[i] << endl;
+      }
+       
+
+
     return 0;
 }
