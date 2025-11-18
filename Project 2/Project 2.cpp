@@ -220,6 +220,11 @@ int main() {
         << clsString::ReplaceWord("This city is beautiful, very Beautiful", "beautiful", "amazing", false) << endl;
     cout << "============================================================\n";
 
+    clsString str("osama", " ");
+   cout<< str.CountCapitalLetters()<<endl;
+   str.ReplaceWord("osama", "sama", true);
+      cout << str.GetValue()<< endl;
+      
  
     return 0;
 }

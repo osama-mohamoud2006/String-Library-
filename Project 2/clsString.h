@@ -10,6 +10,7 @@ class clsString {
 private:
     string _value ;
    static string _delmi;
+
 public:
     //no-args constructor 
     clsString() {
@@ -20,6 +21,11 @@ public:
     //parametrized constructor 
     clsString(string value) {
         this->_value = value;
+    }
+
+    clsString(string value , string delmi) {
+        this->_value = value;
+        _delmi = delmi;
     }
 
     //property set
