@@ -9,7 +9,7 @@ class clsString {
 
 private:
     string _value ;
-   static string _delmi;
+    static string _delmi;
 
 public:
     //no-args constructor 
