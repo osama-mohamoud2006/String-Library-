@@ -358,8 +358,8 @@ public:
      else return FullLine;
  }
 
- string ReplaceWord(string WordToreplace, string TheNewWord ,bool Match =true) {
-     return ReplaceWord(this->_value, WordToreplace, TheNewWord, Match);
+ void ReplaceWord(string WordToreplace, string TheNewWord ,bool Match =true) {
+     this->_value= ReplaceWord(this->_value, WordToreplace, TheNewWord, Match);
  }
 
  private:
