@@ -170,8 +170,8 @@ public:
 
      return res;
  }
- string LowerAll() {
-     return LowerAll(this->_value);
+ void LowerAll() {
+     this->_value = LowerAll(this->_value);
  }
 
 // invert string
@@ -182,8 +182,8 @@ public:
      }
      return res;
  }
- string InvertStr() {
-     return InvertStr(this->_value);
+ void InvertStr() {
+     this->_value = InvertStr(this->_value);
  }
 
 //count capital letters , count small lettrs
