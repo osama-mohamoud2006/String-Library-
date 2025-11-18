@@ -92,6 +92,7 @@ public:
         this->_value = LowercaseTheFirstLetter(_value);
     }
 
+
    static char InvertChar(char c) {
        return (isupper(c)) ? tolower(c) : toupper(c);
    }
@@ -112,7 +113,7 @@ public:
         return FinalRes;
     }
 
-  vector<string>SplitStringOfThisObject() {
+  vector<string>SplitString() {
       return SplitString(this->_value);
   }
 
@@ -129,8 +130,8 @@ public:
         }
           return finalRes.erase(finalRes.length() - _delmi.length());
     }
-    string UppercaseFirstLetterOfEachWord() {
-        return UppercaseFirstLetterOfEachWord(this->_value );
+    void UppercaseFirstLetterOfEachWord() {
+        this->_value = UppercaseFirstLetterOfEachWord(this->_value );
     }
 
 
@@ -146,8 +147,8 @@ public:
         }
         return finalRes.erase(finalRes.length()- _delmi.length()) ;
     }
- string LowercaseFirstLetterOfEachWord() {
-        return LowercaseFirstLetterOfEachWord(this->_value);
+    void LowercaseFirstLetterOfEachWord() {
+        this->_value = LowercaseFirstLetterOfEachWord(this->_value);
     }
 
 
@@ -158,8 +159,8 @@ public:
 
      return res;
  }
- string UpperAll() {
-     return UpperAll(this->_value);
+ void UpperAll() {
+     this->_value = UpperAll(this->_value);
  }
 
 ///Lower all chars of all words
