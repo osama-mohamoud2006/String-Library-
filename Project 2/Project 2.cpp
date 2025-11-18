@@ -131,25 +131,30 @@ int main() {
     // 3. Uppercase First Letter of Each Word
     cout << "Uppercase first letters in static: "
         << clsString::UppercaseFirstLetterOfEachWord("music is fun") << endl;
-    cout << "Uppercase first letters in obj: "
-        << String.UppercaseFirstLetterOfEachWord() << endl;
+
+    String.UppercaseFirstLetterOfEachWord();
+    cout << "Uppercase first letters in obj: " << String.GetValue() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 4. Lowercase First Letter of Each Word
     cout << "Lowercase first letters in static: "
         << clsString::LowercaseFirstLetterOfEachWord("Life Is Great") << endl;
-    cout << "Lowercase first letters in obj: "
-        << String.LowercaseFirstLetterOfEachWord() << endl;
+
+    String.LowercaseFirstLetterOfEachWord();
+    cout << "Lowercase first letters in obj: "<< String.GetValue() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 5. Upper All Letters
     cout << "Upper all in static: " << clsString::UpperAll("hello friend") << endl;
-    cout << "Upper all in obj: " << String.UpperAll() << endl;
+    String.UpperAll();
+    cout << "Upper all in obj: " << String.GetValue() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 6. Invert Case
     cout << "Invert case in static: " << clsString::InvertStr("John SMITH Lee") << endl;
-    cout << "Invert case in obj: " << String.InvertStr() << endl;
+
+    String.InvertStr();
+    cout << "Invert case in obj: " << String.GetValue() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 7. Count Capital Letters
@@ -204,12 +209,13 @@ int main() {
 
     // 16. Reverse String
     cout << "Reverse words in static: " << clsString::ReverseString("music is fun") << endl;
-    cout << "Reverse words in obj: " << String.ReverseString() << endl;
+    String.ReverseString();
+    cout << "Reverse words in obj: " << String.GetValue() << endl;
     cout << "------------------------------------------------------------\n";
 
     // 17. Split String of Object
     cout << "Split words from object:\n";
-    vector<string> splitted = String.SplitStringOfThisObject();
+    vector<string> splitted = String.SplitString();
     for (const string& word : splitted) cout << word << endl;
     cout << "------------------------------------------------------------\n";
 

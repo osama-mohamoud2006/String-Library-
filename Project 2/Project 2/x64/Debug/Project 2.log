@@ -2,18 +2,18 @@
 E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(46,25): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(102,33): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(106,33): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(271,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(275,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(318,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(322,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(333,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(336,37): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'Project%202.cpp')
   
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(274,1): warning C4715: 'clsString::TrimRight': not all control paths return a value
-E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(268,1): warning C4715: 'clsString::TrimLeft': not all control paths return a value
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(278,1): warning C4715: 'clsString::TrimRight': not all control paths return a value
+E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\clsString.h(272,1): warning C4715: 'clsString::TrimLeft': not all control paths return a value
   Project 2.vcxproj -> E:\projects\c++ course\10-OOP Concepts\Project 2\Project 2\x64\Debug\Project 2.exe
