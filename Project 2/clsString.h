@@ -38,14 +38,13 @@ public:
 
     //property get
     string GetValue(){return this->_value;}
-   static string GetTheCurrentDelmi() { return _delmi; }
+    static string GetTheCurrentDelmi() { return _delmi; }
 
 // count word//
     static short CountWord(string value) {
         vector<string> word = SplitString(value); // cut the string into words
         return word.size();
     }
-
     short CountWord() {
         return CountWord(this->_value);
     }
@@ -75,6 +74,10 @@ public:
         }
         return res;
     }
+    void UppercaseTheFirstLetter() {
+        this->_value = UppercaseTheFirstLetter(_value);
+    }
+
     static string LowercaseTheFirstLetter(string value) {
         string res="" ;
         res += tolower(value.at(0));
@@ -85,6 +88,10 @@ public:
         }
         return res;
     }
+    void LowercaseTheFirstLetter() {
+        this->_value = LowercaseTheFirstLetter(_value);
+    }
+
    static char InvertChar(char c) {
        return (isupper(c)) ? tolower(c) : toupper(c);
    }

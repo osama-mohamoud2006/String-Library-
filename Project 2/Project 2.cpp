@@ -234,7 +234,8 @@ int main() {
           cout << strVec[i] << endl;
       }
        
-
+      clsString str3("pl", "#####");
+      cout << str3.GetTheCurrentDelmi() << endl;
 
     return 0;
 }
