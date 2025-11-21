@@ -223,7 +223,7 @@ int main() {
     String.ReplaceWord("alex", "sara", true);
     cout << "Replace 'alex' with 'sara' in obj (case sensitive): " << String.GetValue()<< endl;
     cout << "Replace 'beautiful' with 'amazing' (ignore case): "
-        << clsString::ReplaceWord("This city is beautiful, very Beautiful", "beautiful", "amazing", false) << endl;
+        << clsString::ReplaceWord("This city is beautiful , very Beautiful", "beautiful", "amazing", false) << endl;
     cout << "============================================================\n";
 
     clsString str("osama", " ");
