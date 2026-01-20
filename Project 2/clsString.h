@@ -53,11 +53,11 @@ public:
 
     // The first letter of each word//
     static void PrintFirstLetter(std::string value) {
-        vector<string> word = SplitString(value); // cut the string into words
-        for (string &w: word) {
+        std::vector<std::string> word = SplitString(value); // cut the string into words
+        for (std::string &w: word) {
             //temp var
-            string TempWord = w;
-            cout << TempWord.at(0) << endl;
+            std::string TempWord = w;
+            std::cout << TempWord.at(0) << std::endl;
         }
     }
 
@@ -67,7 +67,7 @@ public:
 
 
     static std::string UppercaseTheFirstLetter(std::string value) {
-        string res = "";
+        std::string res = "";
         res += toupper(value.at(0));
         for (int i = 1; i < value.length(); i++) {
             res += value[i];
@@ -80,7 +80,7 @@ public:
     }
 
     static std::string LowercaseTheFirstLetter(std::string value) {
-        string res = "";
+        std::string res = "";
         res += tolower(value.at(0));
         for (int i = 1; i < value.length(); i++) {
             res += value[i];
@@ -178,7 +178,7 @@ public:
     }
 
     // invert string
-    static string InvertStr(std::string value) {
+    static std::string InvertStr(std::string value) {
         std::string res = "";
         for (int i = 0; i < value.size(); i++) {
             res += InvertChar(value.at(i));
@@ -301,7 +301,7 @@ public:
 
     //join string
     static std::string JoinString(std::vector<std::string> VectorOfString) {
-        string FinalString = "";
+        std::string FinalString = "";
         for (std::string &str: VectorOfString)
             FinalString += (str + _delmi);
         return FinalString;
@@ -326,7 +326,7 @@ public:
 private:
     static std::string ReplaceWordMatchCase(std::string FullLine, std::string WordToreplace, std::string TheNewWord) {
         short pos = 0;
-        while ((pos = FullLine.find(WordToreplace)) != string::npos) {
+        while ((pos = FullLine.find(WordToreplace)) != std::string::npos) {
             FullLine.erase(pos, WordToreplace.length()); // delete the selected word
             FullLine.insert(pos, TheNewWord);
         }
