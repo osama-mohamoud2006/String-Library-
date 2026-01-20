@@ -111,6 +111,7 @@
 using namespace std;
 
 int main() {
+<<<<<<< HEAD
     clsString String;
     String.SetValue("alex smith");
 
@@ -245,3 +246,148 @@ int main() {
 
     return 0;
 }
+=======
+   clsString String;
+   String.SetValue("alex smith");
+
+   cout << "============================================================\n";
+
+   // 1. Count Words
+   cout << "Count of words in static: " << clsString::CountWord("hello world") << endl;
+   cout << "Count of words in obj: " << String.CountWord() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 2. Print First Letters
+   cout << "First letters in static:\n";
+   clsString::PrintFirstLetter("kate luna tom claire");
+   cout << "\nFirst letters in obj:\n";
+   String.PrintFirstLetter();
+   cout << "------------------------------------------------------------\n";
+
+   // 3. Uppercase First Letter of Each Word
+   cout << "Uppercase first letters in static: "
+       << clsString::UppercaseFirstLetterOfEachWord("music is fun") << endl;
+
+   String.UppercaseFirstLetterOfEachWord();
+   cout << "Uppercase first letters in obj: " << String.GetValue() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 4. Lowercase First Letter of Each Word
+   cout << "Lowercase first letters in static: "
+       << clsString::LowercaseFirstLetterOfEachWord("Life Is Great") << endl;
+
+   String.LowercaseFirstLetterOfEachWord();
+   cout << "Lowercase first letters in obj: "<< String.GetValue() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 5. Upper All Letters
+   cout << "Upper all in static: " << clsString::UpperAll("hello friend") << endl;
+   String.UpperAll();
+   cout << "Upper all in obj: " << String.GetValue() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 6. Invert Case
+   cout << "Invert case in static: " << clsString::InvertStr("John SMITH Lee") << endl;
+
+   String.InvertStr();
+   cout << "Invert case in obj: " << String.GetValue() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 7. Count Capital Letters
+   cout << "Count capital letters in static: " << clsString::CountCapitalLetters("Sarah Johnson") << endl;
+   cout << "Count capital letters in obj: " << String.CountCapitalLetters() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 8. Count Small Letters
+   cout << "Count small letters in static: " << clsString::CountSmallLetters("Sarah Johnson") << endl;
+   cout << "Count small letters in obj: " << String.CountSmallLetters() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 9. Length Without Spaces
+   cout << "Length without spaces in static: " << clsString::GetLengthWithoutCountSpace("Sarah Johnson") << endl;
+   cout << "Length without spaces in obj: " << String.GetLengthWithoutCountSpace() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 10. Count Specific Character
+   cout << "Count 'a' (case insensitive) in static: "
+       << clsString::CountCharInString('a', "Sarah Johnson Learning Code", false) << endl;
+   cout << "Count 'a' (case insensitive) in obj: " << String.CountCharInString('a', false) << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 11. Check Vowel
+   cout << "Is 'e' a vowel (static): " << (clsString::IsVowel('e') ? "Yes" : "No") << endl;
+   cout << "Is 'e' a vowel (obj): " << (String.IsVowel('e') ? "Yes" : "No") << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 12. Count Vowels
+   cout << "Count vowels in static: " << clsString::CountTheVowelCharsInString("Sarah Johnson Learning Code") << endl;
+   cout << "Count vowels in obj: " << String.CountTheVowelCharsInString() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 13. Print Vowels
+   cout << "Print vowels in static: ";
+   clsString::PrintVowelsInString("Sarah Johnson Learning Code");
+   cout << "\nPrint vowels in obj: ";
+   String.PrintVowelsInString();
+   cout << "\n------------------------------------------------------------\n";
+
+   // 14. Trim Functions
+   cout << "Trim right in static: " << clsString::TrimRight("coding is fun   ") << endl;
+   cout << "Trim right: " << clsString::TrimString("   coding is fun   ", "right") << endl;
+   cout << "Trim left: " << clsString::TrimString("   coding is fun   ", "left") << endl;
+   cout << "Trim all: " << clsString::TrimString("   coding is fun   ", "all") << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 15. Join String
+   vector<string> words = { "luna", "tom", "emma", "jack" };
+   cout << "Join vector (static): " << clsString::JoinString(words) << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 16. Reverse String
+   cout << "Reverse words in static: " << clsString::ReverseString("music is fun") << endl;
+   String.ReverseString();
+   cout << "Reverse words in obj: " << String.GetValue() << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 17. Split String of Object
+   cout << "Split words from object:\n";
+   vector<string> splitted = String.SplitString();
+   for (const string& word : splitted) cout << word << endl;
+   cout << "------------------------------------------------------------\n";
+
+   // 18. Replace Word
+   String.ReplaceWord("alex", "sara", true);
+   cout << "Replace 'alex' with 'sara' in obj (case sensitive): " << String.GetValue()<< endl;
+   cout << "Replace 'beautiful' with 'amazing' (ignore case): "
+       << clsString::ReplaceWord("This city is beautiful , very Beautiful", "beautiful", "amazing", false) << endl;
+   cout << "============================================================\n";
+
+   clsString str("osama", " ");
+  cout<< str.CountCapitalLetters()<<endl;
+  str.ReplaceWord("osama", "sama", true);
+     cout << str.GetValue()<< endl;
+     
+     cout << "============================================================\n";
+     clsString::SetDelmi("//#//");
+   
+     vector<string> strVec = clsString::SplitString("oakl//#//kask//#//ksak");
+
+     for (int i = 0; i < strVec.size(); i++) {
+         cout << strVec[i] << endl;
+     }
+      
+     clsString str3("pl", "#####");
+     cout << str3.GetTheCurrentDelmi() << endl;
+
+
+     
+
+   return 0;
+}
+
+// int main() {
+// 	clsString s1 =clsString::UppercaseFirstLetterOfEachWord("osama mohamoud");
+// 	//s1.LowercaseFirstLetterOfEachWord();
+// 	cout << s1.GetValue() << endl; 
+// }
+>>>>>>> 22b24eb (Auto commit: 2026-01-20 19:23:55)

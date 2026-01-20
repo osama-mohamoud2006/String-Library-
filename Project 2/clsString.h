@@ -4,7 +4,11 @@
 #include <string>
 #include <utility>
 #include<vector>
+<<<<<<< HEAD
 using namespace std;
+=======
+
+>>>>>>> 22b24eb (Auto commit: 2026-01-20 19:23:55)
 
 class clsString {
 private:
