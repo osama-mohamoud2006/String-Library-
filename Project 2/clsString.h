@@ -4,16 +4,11 @@
 #include <string>
 #include <utility>
 #include<vector>
-<<<<<<< HEAD
-using namespace std;
-=======
-
->>>>>>> 22b24eb (Auto commit: 2026-01-20 19:23:55)
 
 class clsString {
 private:
-    string _value;
-    static string _delmi;
+    std::string _value;
+    static std::string _delmi;
 
 public:
     //no-args constructor
@@ -23,31 +18,31 @@ public:
     }
 
     //parametrized constructor
-    clsString(string value) {
+    clsString(std::string value) {
         this->_value = value;
     }
 
-    clsString(string value, string delmi) {
+    clsString(std::string value, std::string delmi) {
         this->_value = value;
         _delmi = delmi;
     }
 
     //property set
-    void SetValue(string value) {
+    void SetValue(std::string value) {
         this->_value = value;
     }
 
-    static void SetDelmi(string delmi) {
+    static void SetDelmi(std::string delmi) {
         _delmi = delmi;
     }
 
     //property get
-    string GetValue() { return this->_value; }
-    static string GetTheCurrentDelmi() { return _delmi; }
+    std::string GetValue() { return this->_value; }
+    static std::string GetTheCurrentDelmi() { return _delmi; }
 
     // count word//
-    static short CountWord(string value) {
-        vector<string> word = SplitString(value); // cut the string into words
+    static short CountWord(std::string value) {
+        std::vector<std::string> word = SplitString(value); // cut the string into words
         return word.size();
     }
 
@@ -57,7 +52,7 @@ public:
 
 
     // The first letter of each word//
-    static void PrintFirstLetter(string value) {
+    static void PrintFirstLetter(std::string value) {
         vector<string> word = SplitString(value); // cut the string into words
         for (string &w: word) {
             //temp var
@@ -71,7 +66,7 @@ public:
     }
 
 
-    static string UppercaseTheFirstLetter(string value) {
+    static std::string UppercaseTheFirstLetter(std::string value) {
         string res = "";
         res += toupper(value.at(0));
         for (int i = 1; i < value.length(); i++) {
@@ -84,7 +79,7 @@ public:
         this->_value = UppercaseTheFirstLetter(_value);
     }
 
-    static string LowercaseTheFirstLetter(string value) {
+    static std::string LowercaseTheFirstLetter(std::string value) {
         string res = "";
         res += tolower(value.at(0));
         for (int i = 1; i < value.length(); i++) {
@@ -104,11 +99,11 @@ public:
 
 public:
     // cut the full sentence into vector of words
-    static vector<string> SplitString(string value) {
+    static std::vector<std::string> SplitString(std::string value) {
         short pos;
-        vector<string> FinalRes;
-        string word;
-        while ((pos = value.find(_delmi)) != string::npos) {
+        std::vector<std::string> FinalRes;
+        std::string word;
+        while ((pos = value.find(_delmi)) != std::string::npos) {
             word = value.substr(0, pos); // get the word
             if (word != "") FinalRes.push_back(word); // uppercase the current word
 
@@ -118,17 +113,17 @@ public:
         return FinalRes;
     }
 
-    vector<string> SplitString() {
+    std::vector<std::string> SplitString() {
         return SplitString(this->_value);
     }
 
     //upper case first letter of each word
-    static string UppercaseFirstLetterOfEachWord(string value) {
-        string finalRes = "";
-        vector<string> word = SplitString(value); // cut the string into words
-        for (string &w: word) {
+    static std::string UppercaseFirstLetterOfEachWord(std::string value) {
+        std::string finalRes = "";
+        std::vector<std::string> word = SplitString(value); // cut the string into words
+        for (std::string &w: word) {
             //temp var
-            string TempWord = w;
+            std::string TempWord = w;
             TempWord = UppercaseTheFirstLetter(TempWord);
             finalRes += TempWord + _delmi;
         }
@@ -141,12 +136,12 @@ public:
 
 
     // lower the first letter  for each word//
-    static string LowercaseFirstLetterOfEachWord(string value) {
-        string finalRes = "";
-        vector<string> word = SplitString(value); // cut the string into words
-        for (string &w: word) {
+    static std::string LowercaseFirstLetterOfEachWord(std::string value) {
+        std::string finalRes = "";
+        std::vector<std::string> word = SplitString(value); // cut the string into words
+        for (std::string &w: word) {
             //temp var
-            string TempWord = w;
+            std::string TempWord = w;
             TempWord = LowercaseTheFirstLetter(TempWord);
             finalRes += TempWord + _delmi;
         }
@@ -159,8 +154,8 @@ public:
 
 
     ///Upper all chars of all words
-    static string UpperAll(string value) {
-        string res = "";
+    static std::string UpperAll(std::string value) {
+        std::string res = "";
         for (int i = 0; i < value.length(); i++)res += toupper(value.at(i));
 
         return res;
@@ -171,8 +166,8 @@ public:
     }
 
     ///Lower all chars of all words
-    static string LowerAll(string value) {
-        string res = "";
+    static std::string LowerAll(std::string value) {
+        std::string res = "";
         for (int i = 0; i < value.length(); i++)res += tolower(value.at(i));
 
         return res;
@@ -183,8 +178,8 @@ public:
     }
 
     // invert string
-    static string InvertStr(string value) {
-        string res = "";
+    static string InvertStr(std::string value) {
+        std::string res = "";
         for (int i = 0; i < value.size(); i++) {
             res += InvertChar(value.at(i));
         }
@@ -196,7 +191,7 @@ public:
     }
 
     //count capital letters , count small lettrs
-    static short CountCapitalLetters(string value) {
+    static short CountCapitalLetters(std::string value) {
         short c = 0;
         for (int i = 0; i < value.length(); i++)
             if (isupper(value.at(i))) c++;
@@ -207,7 +202,7 @@ public:
         return CountCapitalLetters(this->_value);
     }
 
-    static short CountSmallLetters(string value) {
+    static short CountSmallLetters(std::string value) {
         short s = 0;
         for (int i = 0; i < value.length(); i++)
             if (islower(value.at(i))) s++;
@@ -218,7 +213,7 @@ public:
         return CountSmallLetters(this->_value);
     }
 
-    static short GetLengthWithoutCountSpace(string value) {
+    static short GetLengthWithoutCountSpace(std::string value) {
         short count = 0;
         for (int i = 0; i < value.length(); i++)
             if (value[i] != ' ')count++;
@@ -230,7 +225,7 @@ public:
     }
 
     //count Specific char in string
-    static short CountCharInString(char c, string value, bool Match = false) {
+    static short CountCharInString(char c, std::string value, bool Match = false) {
         short count = 0;
         for (int i = 0; i < value.length(); i++) {
             if (!Match) {
@@ -254,7 +249,7 @@ public:
     }
 
     //Count Vowel chars in string
-    static short CountTheVowelCharsInString(string value) {
+    static short CountTheVowelCharsInString(std::string value) {
         short count = 0;
         for (int i = 0; i < value.length(); i++)
             if (IsVowel(tolower(value.at(i)))) count++;
@@ -266,9 +261,9 @@ public:
     }
 
     // Print Vowel chars in string
-    static void PrintVowelsInString(string value) {
+    static void PrintVowelsInString(std::string value) {
         for (int i = 0; i < value.length(); i++)
-            if (IsVowel(tolower(value.at(i)))) cout << value.at(i) << " ";
+            if (IsVowel(tolower(value.at(i)))) std::cout << value.at(i) << " ";
     }
 
     void PrintVowelsInString() {
@@ -276,18 +271,18 @@ public:
     }
 
     // Trim
-    static string TrimLeft(string value) {
+    static std::string TrimLeft(std::string value) {
         for (int i = 0; i < value.length(); i++)
             if (value[i] != ' ') return value.substr(i, value.length() - 1);
     }
 
-    static string TrimRight(string value) {
+    static std::string TrimRight(std::string value) {
         for (int i = value.length(); i >= 0; i--)
             if (value[i] != ' ') return value.substr(0, i);
     }
 
-    static string TrimString(string value, string option = "all") {
-        string FinalRes = "";
+    static std::string TrimString(std::string value, std::string option = "all") {
+       std::string FinalRes = "";
         if (option == "all") {
             return TrimRight(TrimLeft(value));
         } else if (option == "right") {
@@ -301,21 +296,21 @@ public:
 
     void TrimLeft() { this->_value = TrimLeft(this->_value); }
     void TrimRight() { this->_value = TrimRight(this->_value); }
-    void TrimString(string option = "all") { this->_value = TrimString(this->_value, option); }
+    void TrimString(std::string option = "all") { this->_value = TrimString(this->_value, option); }
 
 
     //join string
-    static string JoinString(vector<string> VectorOfString) {
+    static std::string JoinString(std::vector<std::string> VectorOfString) {
         string FinalString = "";
-        for (string &str: VectorOfString)
+        for (std::string &str: VectorOfString)
             FinalString += (str + _delmi);
         return FinalString;
     }
 
     // reverse string
-    static string ReverseString(string value) {
-        vector<string> words = SplitString(value);
-        string res = "";
+    static std::string ReverseString(std::string value) {
+       std:: vector<std::string> words = SplitString(value);
+        std::string res = "";
         for (int i = words.size() - 1; i >= 0; i--) {
             res += words[i] + _delmi;
         }
@@ -329,7 +324,7 @@ public:
 
     //replace word
 private:
-    static string ReplaceWordMatchCase(string FullLine, string WordToreplace, string TheNewWord) {
+    static std::string ReplaceWordMatchCase(std::string FullLine, std::string WordToreplace, std::string TheNewWord) {
         short pos = 0;
         while ((pos = FullLine.find(WordToreplace)) != string::npos) {
             FullLine.erase(pos, WordToreplace.length()); // delete the selected word
@@ -339,7 +334,7 @@ private:
     }
 
 public:
-    static string ReplaceWord(string FullLine, string WordToreplace, string TheNewWord, bool Match = true) {
+    static std::string ReplaceWord(std::string FullLine, std::string WordToreplace, std::string TheNewWord, bool Match = true) {
         // if the word in line and the word to replace are exactly the same
         if (Match) {
             return ReplaceWordMatchCase(FullLine, WordToreplace, TheNewWord);
@@ -351,11 +346,11 @@ public:
             //Manual implementaion
 
             //1.Split String
-            vector<string> words = SplitString(FullLine);
+            std::vector<std::string> words = SplitString(FullLine);
 
             //2.Access Elements
             //3.Replace Element
-            for (string &SWord: words) {
+            for (std::string &SWord: words) {
                 if (LowerAll(SWord) == LowerAll(WordToreplace))
                     SWord = TheNewWord;
             }
@@ -364,7 +359,7 @@ public:
         } else return FullLine;
     }
 
-    void ReplaceWord(string WordToreplace, string TheNewWord, bool Match = true) {
+    void ReplaceWord(std::string WordToreplace, std::string TheNewWord, bool Match = true) {
         this->_value = ReplaceWord(this->_value, WordToreplace, TheNewWord, Match);
     }
 
@@ -377,8 +372,8 @@ public:
                    : false;
     }
 
-    static string RemovePunctuation(string value) {
-        string res = "";
+    static std::string RemovePunctuation(std::string value) {
+        std::string res = "";
         for (int i = 0; i < value.length(); i++)
             if (!IsPunct(value[i])) res += value[i];
         return res;
@@ -390,4 +385,4 @@ public:
 };
 
 
-string clsString::_delmi = " ";
+std::string clsString::_delmi = " ";
