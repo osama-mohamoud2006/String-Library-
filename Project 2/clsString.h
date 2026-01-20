@@ -38,7 +38,7 @@ public:
 
     //property get
     std::string GetValue() { return this->_value; }
-    static std::string GetTheCurrentDelmi() { return _delmi; }
+    static std::string GetTheCurrentDelmi() { return  _delmi; }
 
     // count word//
     static short CountWord(std::string value) {
